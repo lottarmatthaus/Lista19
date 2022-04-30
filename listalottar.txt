@@ -1,0 +1,62 @@
+1-
+     CREATE DATABASE aulabd;
+    CREATE TABLE RESPOSTA (
+        numquestao int,
+        decrespsota VARCHAR(500) NOT NULL,
+        PRIMARY KEY (numquestao)
+    );
+    CREATE TABLE PROFESSOR (
+        codigo int, 
+        nome VARCHAR(30) NOT NULL, 
+        cpf int NOT NULL, 
+        email VARCHAR(30),
+        titulacao VARCHAR(30),
+        fone int, 
+        sexo int NOT NULL
+    )
+    INSER INTO PROFESSOR(1, "Jandeilson", "3147298018", "jandeilson@edu.br", "mestre", 910291, 0)
+    INSER INTO PROFESSOR(2, "Ana", "314723398018", "ana@edu.br", "bacharel", 112313, 1)
+
+2- A chave primaria é o identificador único de um registro em uma tabela. 
+3- Foreign key é a chave que permite a referencia a registros de outras tabelas. 
+4- CRETE TABLE CURSO (
+    id int, 
+    descricao VARCHAR(30)
+)
+5-     CREATE TABLE ALUNOS (
+    id int, 
+    nome VARCHAR(30), 
+    matricula int, 
+    estado VARCHAR(30), 
+    sexo int NOT NULL,
+    FOREIGN KEY (fk_curso) REFERENCES CURSO(codigo)
+)
+6-  ALTER TABLE ALUNOS;
+    ADD email VARCHAR(30);
+7-  ALTER TABLE PROFESSOR;
+    DROP fone;
+8-  UPDATE PROFESSOR; 
+    SET sexo = 1;
+9-  DELETE FROM professor WHERE sexo = 1;
+10- SELECT nome, matricula; 
+    FROM alunos; 
+11- SELECT * 
+    FROM professor
+    WHERE sexo = 0;
+12- 
+13- CREATE TABLE CIDADE (
+    id int, 
+    nome VARCHAR(30), 
+    FOREIGN KEY (id_estado) REFERENCES ESTADO(id)
+)
+
+CREATE TABLE ESTADO (
+    id int, 
+    PRIMARY KEY id
+)
+14 - 
+15 - SELECT * FROM CIDADE WHERE id_estado == '13'
+16 - SELECT * FROM CIDADE 
+17 - SELECT LOWER(name) FROM CIDADE
+18 - SELECT UPPER(name) FROM CIDADE
+19 - SELECT id FROM ESTADO INNER JOIN CIDADE ON cidade.id_estado = estado.id COUNT(id)
